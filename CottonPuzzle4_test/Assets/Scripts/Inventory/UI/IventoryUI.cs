@@ -60,7 +60,7 @@ public class IventoryUI : MonoBehaviour
             leftButton.interactable = false;
             rightButton.interactable = true;
         }
-        else if(index > currentIndex) //移动完左侧有物体，右边没有
+        else if (index > currentIndex) //移动完左侧有物体，右边没有
         {
             leftButton.interactable = true;
             rightButton.interactable = false;
@@ -70,6 +70,19 @@ public class IventoryUI : MonoBehaviour
             leftButton.interactable = true;
             rightButton.interactable = true;
         }
+
+        //InventoryManager inventory = InventoryManager.Instance;
+        //if(index < inventory.GetItemList().Count - 1 && index >= 0)
+        //{
+        //    leftButton.interactable = false;
+        //    rightButton.interactable = true;
+        //} else if(index == inventory.GetItemList().Count - 1)
+        //{
+        //    leftButton.interactable = true;
+        //     rightButton.interactable = false;
+        //}
+
+
         //呼叫事件，让manager传sprite
         EventHandler.CallChangeItemEvent(index);
     }

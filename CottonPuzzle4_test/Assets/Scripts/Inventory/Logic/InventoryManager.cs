@@ -81,4 +81,10 @@ public class InventoryManager : Singleton<InventoryManager>
         }
         return -1;
     }
+
+    //获取到当前的物品栏list
+    //public List<ItemName> GetItemList()
+    //{
+    //    return itemList;
+    //}
 }
