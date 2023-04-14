@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CursorManger : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class CursorManger : MonoBehaviour
         {
             hand.position = Input.mousePosition;
         }
-
+        if (InteractiveWithUI()) return;
         if (canClick && Input.GetMouseButtonDown(0))
         {
             //存在检测到其他非切换页面的碰撞体的可能，需要对碰撞体进行标签判断
@@ -101,5 +102,14 @@ public class CursorManger : MonoBehaviour
     private Collider2D ObjectAtMousePosition()
     {
         return Physics2D.OverlapPoint(mouseWorldPos); //获取与该点重合的碰撞体
+    }
+
+    private bool InteractiveWithUI()
+    {
+        if(EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            return true;
+        }
+        return false;
     }
 }

@@ -437,6 +437,78 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &804778303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 804778306}
+  - component: {fileID: 804778305}
+  - component: {fileID: 804778304}
+  m_Layer: 0
+  m_Name: Teleport to H3
+  m_TagString: Teleport
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &804778304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804778303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d4725bd52e2b845a53da408c506aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneFrom: H2
+  sceneToGo: H3
+--- !u!61 &804778305
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804778303}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -13.545399, y: 8.184395}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9600334, y: 3.4613261}
+  m_EdgeRadius: 0
+--- !u!4 &804778306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804778303}
+  m_LocalRotation: {x: -0.003311666, y: -0.00003131898, z: 0.000000103715024, w: 0.9999946}
+  m_LocalPosition: {x: 14.45, y: -6.28, z: -1.25}
+  m_LocalScale: {x: 1.0383, y: 1.0383, z: 1.0383}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -0.379, y: -0.004, z: 0}
 --- !u!1 &1188660571
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +645,7 @@ GameObject:
   - component: {fileID: 2030122533}
   - component: {fileID: 2030122535}
   - component: {fileID: 2030122536}
+  - component: {fileID: 2030122537}
   m_Layer: 0
   m_Name: Teleport to H2A
   m_TagString: Teleport
@@ -676,3 +749,32 @@ CircleCollider2D:
   m_Offset: {x: -0.6917448, y: 0.29297435}
   serializedVersion: 2
   m_Radius: 0.6348597
+--- !u!114 &2030122537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030122532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34e31d4ffeeb2c4a9205e66a3e0a4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGameFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 804778303}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  gameName: H2A
+  isPass: 0

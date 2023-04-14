@@ -49,4 +49,16 @@ public static class EventHandler //改成静态方法，在任何地方都可以呼叫订阅
     {
         GameStateChangeEvent?.Invoke(gameState);
     }
+
+    public static event Action CheckGameStateEvent; //用来检查小游戏是否解完
+    public static void CallCheckGameStateEvent()
+    {
+        CheckGameStateEvent?.Invoke();
+    }
+
+    public static event Action<string> GamePassEvent;
+    public static void CallGamePassEvent(string gameName)
+    {
+        GamePassEvent?.Invoke(gameName);
+    }
 }
